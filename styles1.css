@@ -1,0 +1,326 @@
+/* Общие стили */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav li {
+    margin-right: 16px;
+}
+
+nav a {
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+#theme-switcher {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    color: #007bff;
+}
+
+#theme-switcher:hover {
+    text-decoration: underline;
+}
+
+/* Слайдер */
+#slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: opacity 0.5s ease;
+}
+
+.slide.active {
+    display: block;
+    opacity: 1;
+}
+
+.slide img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.slide-content h2 {
+    margin-bottom: 8px;
+}
+
+.rating {
+    font-size: 18px;
+    color: #ffd700;
+    margin-bottom: 8px;
+}
+
+.slide-indicators .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.slide-indicators .active {
+    background-color: #007bff;
+}
+
+/* Форма авторизации */
+#auth form {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 24px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+#auth input[type="email"],
+#auth input[type="password"] {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#auth button[type="submit"] {
+    width: 100%;
+    margin-top: 8px;
+}
+
+#auth a {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #007bff;
+}
+
+/* О нас */
+#about img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 16px;
+}
+
+/* Конкурсы */
+.competitions-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+}
+
+.card p {
+    margin-bottom: 8px;
+}
+
+/* Поиск */
+#search form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 24px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+#search input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+#search button[type="submit"] {
+    width: 100%;
+}
+
+/* Отзывы */
+.feedback-slider {
+    display: flex;
+    overflow-x: scroll;
+    gap: 16px;
+    padding: 16px 0;
+}
+
+.feedback-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.feedback-slider .slide {
+    flex-shrink: 0;
+    width: 200px;
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-slider .slide img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+}
+
+.feedback-slider .slide p {
+    margin-bottom: 8px;
+}
+
+/* Подписка */
+#subscribe form {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 24px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+#subscribe input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+#subscribe label {
+    display: block;
+    margin-bottom: 16px;
+}
+
+#subscribe button[type="submit"] {
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    background-color: #f0f0f0;
+    padding: 24px;
+    text-align: center;
+}
+
+footer nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+
+/* Основной стиль кнопки */
+#theme-switcher {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Зелёный цвет фона */
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Стиль кнопки при наведении */
+  #theme-switcher:hover {
+    background-color: #45a049; /* Темнее зелёный фон при наведении */
+  }
+  
+  /* Стиль кнопки при нажатии */
+  #theme-switcher:active {
+    background-color: #369038; /* Ещё темнее зелёный фон при нажатии */
+  }
+/* да я гений 6886568364534 */

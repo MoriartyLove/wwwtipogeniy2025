@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+        form {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            max-width: 90%;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #ddd;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 20px;
+            margin-bottom: 20px;
+            border: none;
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="text"]::placeholder,
+        input[type="email"]::placeholder,
+        input[type="password"]::placeholder,
+        input[type="number"]::placeholder,
+        textarea::placeholder {
+            color: #666;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        input[type="number"]:focus,
+        textarea:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px top 50%;
+            padding-right: 35px;
+        }
+        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: #666;
+        }
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #666;
+        }
+        ::-moz-placeholder { /* Firefox 19+ */
+            color: #666;
+            opacity: 1;
+        }
+        :-moz-placeholder { /* Firefox 18- */
+            color: #666;
+        }
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+        input[type="checkbox"] {
+            accent-color: #007bff;
+        }
+        .error-message {
+            color: #f00;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        .success-message {
+            color: #0f0;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Форма Регистрации</h2>
+
+<!-- Форма -->
+<form action="/register" method="post" id="registrationForm">
+    <!-- Поля основного пользователя -->
+    <div class="main-user">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required placeholder="example@example.com">
+        
+        <label for="firstName">Имя:</label>
+        <input type="text" id="firstName" name="firstName" required placeholder="Ваше имя">
+
+        <label for="lastName">Фамилия:</label>
+        <input type="text" id="lastName" name="lastName" required placeholder="Ваша фамилия">
+
+        <label for="age">Возраст:</label>
+        <input type="number" id="age" name="age" min="18" max="100" required placeholder="Ваш возраст">
+
+        <label for="gender">Пол:</label>
+        <select id="gender" name="gender" required>
+            <option value="" disabled selected hidden>Выберите один из вариантов</option>
+            <option value="male">Мужской</option>
+            <option value="female">Женский</option>
+        </select>
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required placeholder="Ваш пароль">
+
+        <label for="confirmPassword">Повторите пароль:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Повторите ваш пароль">
+
+        <label for="familyPhoto">Семейная фотография:</label>
+        <input type="file" id="familyPhoto" name="familyPhoto" accept="image/*">
+
+        <p><strong>Члены семьи:</strong></p>
+        <!-- Поля для добавления новых членов семьи -->
+        <div id="familyMembers"></div>
+        <!-- Добавлять новые поля можно через JS, здесь они будут выводиться -->
+
+        <label for="agreement"><input type="checkbox" id="agreement" name="agreement" required> Я согласен(а) с обработкой моих персональных данных.</label>
+
+        <button type="submit">Зарегистрироваться</button>
+    </div>
+</form>
+
+</body>
+</html>

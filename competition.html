@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информация о Конкурсе</title>
+    <style>
+        /* Основные стили для страницы */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .contest-info {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .contest-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .contest-description {
+            margin-bottom: 20px;
+        }
+
+        .contest-image {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            width: 33%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .stat-value {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .review {
+            margin-top: 20px;
+            font-style: italic;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+
+        /* Медиа-запросы для печати */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            .contest-info {
+                background-color: white;
+                border: none;
+                box-shadow: none;
+                padding: 0;
+            }
+
+            .contest-image {
+                filter: grayscale(100%);
+            }
+
+            .stats, .review {
+                display: none;
+            }
+
+            .contest-description {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="contest-info">
+    <h1 class="contest-title">Название Конкурса</h1>
+    <p class="contest-description">
+        Описание конкурса. Здесь можно разместить подробное описание мероприятия, его цели, условия участия и другую полезную информацию.
+    </p>
+    <img src="contest_image.jpg" alt="Изображение конкурса" class="contest-image">
+
+    <div class="stats">
+        <div class="stat-item">
+            <span class="stat-label">Рейтинг:</span>
+            <span class="stat-value">4.5 ★</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Участников:</span>
+            <span class="stat-value">123</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Комментариев:</span>
+            <span class="stat-value">25</span>
+        </div>
+    </div>
+
+    <div class="review">
+        Отзыв участника: "Это был потрясающий опыт! Организация на высшем уровне, рекомендую всем!"
+    </div>
+</div>
+
+</body>
+</html>

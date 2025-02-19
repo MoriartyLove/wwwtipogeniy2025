@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запись на Конкурс</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('background.jpg'); /* Добавляем фоновое изображение */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.95); /* Прозрачность фона */
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #666;
+        }
+
+        input[type="text"],
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            transition: all 0.3s ease; /* Анимация при фокусе */
+        }
+
+        input[type="text"]:focus,
+        select:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        input[type="number"] {
+            width: 70px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: right;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 10px;
+            transition: color 0.3s ease; /* Анимация при наведении */
+        }
+
+        nav a:hover {
+            color: #007bff;
+        }
+
+        /* Иконки рядом с полями ввода */
+        .fa-user,
+        .fa-calendar,
+        .fa-clock,
+        .fa-users {
+            margin-right: 10px;
+            color: #007bff;
+        }
+
+        /* Эффекты наведения */
+        input[type="text"]:hover,
+        select:hover {
+            border-color: #007bff;
+        }
+
+        /* Центрирование содержимого */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Меню с кнопкой выхода -->
+<nav>
+    <a href="#"><i class="fas fa-sign-out-alt"></i> Выход</a>
+</nav>
+
+<div class="container">
+    <h1>Запись на Конкурс</h1>
+
+    <form action="/submit-contest-registration" method="post">
+        <label for="contest"><i class="fas fa-list-ul"></i> Конкурс:</label>
+        <select id="contest" name="contest">
+            <option value="">-- Выберите конкурс --</option>
+            <option value="Конкурс 1">Конкурс 1</option>
+            <option value="Конкурс 2">Конкурс 2</option>
+            <!-- Добавьте дополнительные конкурсы здесь -->
+        </select>
+
+        <label for="date"><i class="far fa-calendar-alt"></i> Дата:</label>
+        <input type="date" id="date" name="date" value="2024-07-08" min="2024-07-08" max="2024-07-08" required readonly>
+
+        <label for="time"><i class="far fa-clock"></i> Время:</label>
+        <select id="time" name="time">
+            <option value="">-- Выберите время --</option>
+            <option value="09:00">09:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
+            <option value="13:00">13:00</option>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+            <option value="17:00">17:00</option>
+            <option value="18:00">18:00</option>
+            <option value="19:00">19:00</option>
+            <option value="20:00">20:00</option>
+            <option value="21:00">21:00</option>
+        </select>
+
+        <label for="participants"><i class="fas fa-users"></i> Количество участников:</label>
+        <input type="number" id="participants" name="participants" min="1" max="1000" placeholder="Укажите количество участников" required>
+
+        <button type="submit"><i class="fas fa-pencil-alt"></i> Записаться на конкурс</button>
+    </form>
+</div>
+
+</body>
+</html>

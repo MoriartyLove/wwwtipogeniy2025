@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание Конкурсов</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .schedule-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid #ccc;
+        }
+
+        .schedule-table thead th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        .schedule-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .time-slot {
+            font-weight: bold;
+        }
+
+        .competition-name {
+            font-weight: bold;
+        }
+
+        .slot-cell {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            display: inline-block;
+            line-height: 60px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .slot-full {
+            background-color: #ff0000;
+            color: white;
+        }
+
+        .slot-empty {
+            background-color: #00ff00;
+            color: black;
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px 10px;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .slot-cell:hover .tooltip {
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media only screen and (max-width: 768px) {
+            .schedule-table {
+                font-size: 12px;
+            }
+
+            .slot-cell {
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Расписание Конкурсов</h1>
+
+<div class="schedule-container">
+    <table class="schedule-table">
+        <thead>
+            <tr>
+                <th rowspan="2">Название Конкурса</th>
+                <th colspan="13">Время проведения</th>
+            </tr>
+            <tr>
+                <th>с 8 до 9 часов</th>
+                <th>с 9 до 10 часов</th>
+                <th>с 10 до 11 часов</th>
+                <th>с 11 до 12 часов</th>
+                <th>с 12 до 13 часов</th>
+                <th>с 13 до 14 часов</th>
+                <th>с 14 до 15 часов</th>
+                <th>с 15 до 16 часов</th>
+                <th>с 16 до 17 часов</th>
+                <th>с 17 до 18 часов</th>
+                <th>с 18 до 19 часов</th>
+                <th>с 19 до 20 часов</th>
+                <th>с 20 до 21 часов</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Конкурс 1 -->
+            <tr>
+                <td class="competition-name">Конкурс 1</td>
+                <td><div class="slot-cell slot-empty" title="Доступно 5 мест"><span class="tooltip">5 мест доступно</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 7 мест"><span class="tooltip">7 мест доступно</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 3 места"><span class="tooltip">3 места доступно</span></div></td>
+                <td><div class="slot-cell slot-full" title="Нет доступных мест"><span class="tooltip">Мест нет</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 6 мест"><span class="tooltip">6 мест доступно</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 2 места"><span class="tooltip">2 места доступно</span></div></td>
+                <td><div class="slot-cell slot-full" title="Нет доступных мест"><span class="tooltip">Мест нет</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 4 места"><span class="tooltip">4 места доступно</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 8 мест"><span class="tooltip">8 мест доступно</span></div></td>
+                <td><div class="slot-cell slot-full" title="Нет доступных мест"><span class="tooltip">Мест нет</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 5 мест"><span class="tooltip">5 мест доступно</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 7 мест"><span class="tooltip">7 мест доступно</span></div></td>
+                <td><div class="slot-cell slot-full" title="Нет доступных мест"><span class="tooltip">Мест нет</span></div></td>
+            </tr>
+
+            <!-- Конкурс 2 -->
+            <tr>
+                <td class="competition-name">Конкурс 2</td>
+                <td><div class="slot-cell slot-empty" title="Доступно 3 места"><span class="tooltip">3 места доступно</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 5 мест"><span class="tooltip">5 мест доступно</span></div></td>
+                <td><div class="slot-cell slot-full" title="Нет доступных мест"><span class="tooltip">Мест нет</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 2 места"><span class="tooltip">2 места доступно</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 4 места"><span class="tooltip">4 места доступно</span></div></td>
+                <td><div class="slot-cell slot-full" title="Нет доступных мест"><span class="tooltip">Мест нет</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 6 мест"><span class="tooltip">6 мест доступно</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 8 мест"><span class="tooltip">8 мест доступно</span></div></td>
+                <td><div class="slot-cell slot-full" title="Нет доступных мест"><span class="tooltip">Мест нет</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 3 места"><span class="tooltip">3 места доступно</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 5 мест"><span class="tooltip">5 мест доступно</span></div></td>
+                <td><div class="slot-cell slot-full" title="Нет доступных мест"><span class="tooltip">Мест нет</span></div></td>
+            </tr>
+
+
+
+            <!-- Конкурс 3 -->
+            <tr>
+                <td class="competition-name">Конкурс 3</td>
+                <td><div class="slot-cell slot-empty" title="Доступно 3 места"><span class="tooltip">3 места доступно</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 5 мест"><span class="tooltip">5 мест доступно</span></div></td>
+                <td><div class="slot-cell slot-full" title="Нет доступных мест"><span class="tooltip">Мест нет</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 2 места"><span class="tooltip">2 места доступно</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 4 места"><span class="tooltip">4 места доступно</span></div></td>
+                <td><div class="slot-cell slot-full" title="Нет доступных мест"><span class="tooltip">Мест нет</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 6 мест"><span class="tooltip">6 мест доступно</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 8 мест"><span class="tooltip">8 мест доступно</span></div></td>
+                <td><div class="slot-cell slot-full" title="Нет доступных мест"><span class="tooltip">Мест нет</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 3 места"><span class="tooltip">3 места доступно</span></div></td>
+                <td><div class="slot-cell slot-empty" title="Доступно 5 мест"><span class="tooltip">5 мест доступно</span></div></td>
+                <td><div class="slot-cell slot-full" title="Нет доступных мест"><span class="tooltip">Мест нет</span></div></td>
+            </tr>
+
+
+
+            <!-- Остальные конкурсы аналогично -->
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

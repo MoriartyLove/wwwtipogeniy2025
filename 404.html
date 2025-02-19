@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ошибка 404</title>
+
+    <link rel="icon" sizes="192x192" href="https://static.wixstatic.com/media/ba338e_737f2e25ffd148dc9c7128f301a70510%7Emv2.jpg/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/ba338e_737f2e25ffd148dc9c7128f301a70510%7Emv2.jpg" type="image/jpeg"/>
+  <link rel="shortcut icon" href="https://static.wixstatic.com/media/ba338e_737f2e25ffd148dc9c7128f301a70510%7Emv2.jpg/v1/fill/w_32%2Ch_32%2Clg_1%2Cusm_0.66_1.00_0.01/ba338e_737f2e25ffd148dc9c7128f301a70510%7Emv2.jpg" type="image/jpeg"/>
+  <link rel="apple-touch-icon" href="https://static.wixstatic.com/media/ba338e_737f2e25ffd148dc9c7128f301a70510%7Emv2.jpg/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/ba338e_737f2e25ffd148dc9c7128f301a70510%7Emv2.jpg" type="image/jpeg"/>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .error-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #3c3c3c;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            font-size: 5em;
+            color: #d61919;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #c72c2c;
+            margin-bottom: 30px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Анимация текста */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            33% { transform: translateX(-10px); }
+            66% { transform: translateX(10px); }
+            100% { transform: translateX(0); }
+        }
+
+        h1 span {
+            animation: shake 0.5s ease-in-out infinite alternate;
+        }
+
+        /* Градиентный фон кнопки */
+        button {
+            background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1><span>404</span> Страница не найдена</h1>
+        <p>Упс! Кажется, вы заблудились. Страницы, которую вы ищете, не существует.</p>
+        <a href="index_light.html">Вернуться на главную (Светлая тема) </a>
+        <a href="index.html">Вернуться на главную (Темная тема)        </a>
+    </div>
+</body>
+</html>
